@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login - The Paws Shop</title>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Quicksand', sans-serif;
+      min-height: 100vh;
+      background: linear-gradient(135deg, #dfe9f3, #ffffff);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    .container {
+      display: flex;
+      width: 90%;
+      max-width: 1100px;
+      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.15);
+      border-radius: 20px;
+      overflow: hidden;
+    }
+
+    .left {
+      flex: 1;
+      padding: 60px 40px;
+      background: linear-gradient(to bottom right, #ffecd2, #fcb69f);
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .left h1 {
+      font-size: 2.5em;
+      margin-bottom: 20px;
+    }
+
+    .left p {
+      font-size: 1.1em;
+      line-height: 1.6;
+      max-width: 500px;
+    }
+
+    .right {
+      flex: 1;
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      padding: 60px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    .login-box {
+      background: rgba(255, 255, 255, 0.25);
+      padding: 40px;
+      border-radius: 16px;
+      width: 100%;
+      max-width: 350px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+    }
+
+    .login-box h2 {
+      text-align: center;
+      margin-bottom: 25px;
+      color: #222;
+    }
+
+    .login-box img {
+      display: block;
+      margin: 0 auto 20px;
+      width: 70px;
+      height: 70px;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+
+    .login-box label {
+      display: block;
+      margin-bottom: 6px;
+      color: #444;
+      font-size: 0.95em;
+    }
+
+    .login-box input[type="text"],
+    .login-box input[type="password"] {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 15px;
+      border: none;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.6);
+      box-shadow: inset 0 2px 4px rgba(0,0,0,0.05);
+    }
+
+    .login-box input[type="text"]:focus,
+    .login-box input[type="password"]:focus {
+      outline: none;
+      box-shadow: 0 0 0 2px #fcb69f;
+    }
+
+    .login-box input[type="submit"] {
+      width: 100%;
+      padding: 12px;
+      border: none;
+      border-radius: 8px;
+      background-color: #f7945d;
+      color: #fff;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .login-box input[type="submit"]:hover {
+      background-color: #e86a34;
+    }
+
+    .login-box .extras {
+      margin-top: 10px;
+      font-size: 0.9em;
+      color: #555;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .login-box .extras a {
+      color: #f76c3b;
+      text-decoration: none;
+    }
+
+    .login-box .extras a:hover {
+      text-decoration: underline;
+    }
+
+    .checkbox {
+      display: flex;
+      align-items: center;
+    }
+
+    .checkbox input {
+      margin-right: 8px;
+    }
+
+    @media (max-width: 900px) {
+      .container {
+        flex-direction: column;
+        border-radius: 0;
+      }
+
+      .left,
+      .right {
+        flex: unset;
+        width: 100%;
+      }
+
+      .left {
+        padding: 40px 20px;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="left">
+      <h1>Welcome to The Paws Shop</h1>
+      <p>
+        From quality pet food to cozy beds and fun toys, The Paws Shop is your trusted destination for pet happiness. We proudly serve both walk-in and online customers with dedication and heart. Our new automated system ensures smooth, secure transactions for Cashiers and Managers.
+      </p>
+    </div>
+
+    <div class="right">
+      <form class="login-box" action="login.php" method="POST">
+        <h2>User Login</h2>
+        <img src="images/user.png" alt="User Icon" />
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required />
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required />
+
+        <div class="extras">
+          <div class="checkbox">
+            <input type="checkbox" id="remember" name="remember" />
+            <label for="remember">Remember me</label>
+          </div>
+          <a href="#">Forgot password?</a>
+        </div>
+
+        <br>
+        <input type="submit" value="Login" />
+      </form>
+    </div>
+  </div>
+</body>
+</html>
